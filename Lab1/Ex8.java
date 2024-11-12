@@ -1,39 +1,22 @@
-import java.util.ArrayList;
 import java.util.Scanner;
-
-class Student {
-    String studentCode;
-    String studentName;
-    int studentAge;
-    String studentSex;
-
-    // Constructor
-    public Student(String code, String name, int age, String sex) {
-        this.studentCode = code;
-        this.studentName = name;
-        this.studentAge = age;
-        this.studentSex = sex;
-    }
-
-    // Display student information
-    public void displayInfo() {
-        System.out.println("Student Code: " + studentCode);
-        System.out.println("Student Name: " + studentName);
-        System.out.println("Student Age: " + studentAge);
-        System.out.println("Student Sex: " + studentSex);
-    }
-}
 
 public class Ex8 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Student> students = new ArrayList<>();
 
-        while (true) {
+        String[] studentCodes = new String[10];
+        String[] studentNames = new String[10];
+        int[] studentAges = new int[10];
+        String[] studentSexes = new String[10];
+
+        int studentCount = 0;
+        System.out.println("Enter number of students: ");
+        int n = scanner.nextInt();
+
+        while (studentCount < n) {
             System.out.print("Enter student code (or 'n' to stop): ");
             String code = scanner.nextLine();
             if (code.equalsIgnoreCase("n")) break;
-
             System.out.print("Enter student name: ");
             String name = scanner.nextLine();
             System.out.print("Enter student age: ");
@@ -41,13 +24,22 @@ public class Ex8 {
             System.out.print("Enter student sex: ");
             String sex = scanner.nextLine();
 
-            students.add(new Student(code, name, age, sex));
+            studentCodes[studentCount] = code;
+            studentNames[studentCount] = name;
+            studentAges[studentCount] = age;
+            studentSexes[studentCount] = sex;
+
+            studentCount++;
         }
 
-        System.out.println("\nStudent List:");
-        for (Student s : students) {
-            s.displayInfo();
+        System.out.println("Student list: ");
+        for (int i = 1; i <= n; i++) {
+            System.out.println("Student code: " + studentCodes[i]);
+            System.out.println("Student name: " + studentNames[i]);
+            System.out.println("Student age: " + studentAges[i]);
+            System.out.println("Student sex: " + studentSexes[i]);
             System.out.println();
         }
+        
     }
 }
