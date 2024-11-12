@@ -62,6 +62,7 @@ public class Ex1 {
             array[array.length - i - 1] = temp;
         }
         System.out.println("Array sorted in descending order.");
+        printArray();
     }
 
     public static void menu() {
