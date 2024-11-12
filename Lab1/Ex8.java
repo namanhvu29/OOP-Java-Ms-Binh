@@ -4,14 +4,16 @@ public class Ex8 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String[] studentCodes = new String[10];
-        String[] studentNames = new String[10];
-        int[] studentAges = new int[10];
-        String[] studentSexes = new String[10];
-
         int studentCount = 0;
         System.out.println("Enter number of students: ");
         int n = scanner.nextInt();
+
+        String[] studentCodes = new String[n];
+        String[] studentNames = new String[n];
+        int[] studentAges = new int[n];
+        String[] studentSexes = new String[n];
+
+        
 
         while (studentCount < n) {
             System.out.print("Enter student code (or 'n' to stop): ");
