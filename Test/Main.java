@@ -44,6 +44,7 @@ public class Main {
                 nv2[i].Input();
             }
             for ( int i = 0; i < n; i++) {
+                System.out.println("- - - - - - - - - - ");
                 nv2[i] = new PartTimeEmployee();
                 System.out.println("Hien thi thong tin nv parttime thu " + i);
                 nv2[i].displayInfor();

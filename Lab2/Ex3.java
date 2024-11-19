@@ -15,7 +15,7 @@ public class Ex3 {
             if (name.equalsIgnoreCase("end")) break;
             names.add(name);
         }
-
+            
         Collections.sort(names);
 
         System.out.println("Sorted names:");
