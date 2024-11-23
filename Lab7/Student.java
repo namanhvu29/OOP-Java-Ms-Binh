@@ -11,6 +11,8 @@ public class Student {
     protected double physic;
     protected double chemistry;
 
+    public Object ManagementStudentApp;
+
 
     // Contructor
     public Student(int studentID, String studentName, double math, double physic, double chemistry) {
@@ -87,24 +89,30 @@ public class Student {
     }
 
     // Rank
-    public void getRank() {
+    public String getRank() {
         if ( getAverageMark() >= 8.0) {
-            System.out.println("Rate A");
+            return("Rate A");
         }
         else if ( getAverageMark() >= 6.5) {
-            System.out.println("Rate B");
+            return("Rate B");
         }
         else if ( getAverageMark() >= 5.0) {
-            System.out.println("Rate C");
+            return("Rate C");
         }
         else {
-            System.out.println("Rate D");
+            return("Rate D");
         }
     }
 
-    
-
-
-    
+    @Override
+    public String toString() {
+        return "Student ID: " + studentID +
+               "\nStudent Name: " + studentName +
+               "\nMath: " + math +
+               "\nPhysic: " + physic +
+               "\nChemistry: " + chemistry +
+               "\nAverage Mark: " + getAverageMark() +
+               "\nRank: " + getRank();
+    }
 
 }
